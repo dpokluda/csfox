@@ -1,0 +1,43 @@
+# .NET build and test output
+[Bb]in/
+[Oo]bj/
+/artifacts/
+[Tt]est[Rr]esults/
+coverage/
+*.coverage
+*.coveragexml
+*.trx
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+*.DotSettings.user
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.rsuser
+
+# Visual Studio Code (keep shared project configuration)
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+.history/
+
+# Local configuration and logs
+.env
+.env.*
+!.env.example
+*.log
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# DBF, index, screen, and PRG samples are intentionally not ignored.
