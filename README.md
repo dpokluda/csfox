@@ -3,7 +3,7 @@
 ## Overview
 
 CsFox is an ongoing experiment to build a simple C# interpreter for DOS FoxPro programs with text-based screens.
-The project is in its initial setup stage; no interpreter is implemented yet.
+The repository contains an initial .NET 10 solution; no interpreter or sample programs are implemented yet.
 
 ## Goal
 
@@ -20,6 +20,38 @@ Favor simple, readable code, long-term maintainability, test-driven development,
 Use [GitHub Spec Kit](https://github.com/github/spec-kit) to define small features, plan their implementation, and break the work into tasks.
 The repository includes Copilot skills under `.github/skills/` and shared templates and PowerShell scripts under `.specify/`.
 Repository-wide engineering instructions are in [AGENTS.md](AGENTS.md); project principles are in the [constitution](.specify/memory/constitution.md).
+The [sample specification and runtime direction](specs/README.md) describe the first samples and proposed next capabilities.
+
+## Project structure
+
+```text
+csfox.slnx
+global.json
+src\
+  csfox\          .NET 10 console application
+tests\
+  csfox.tests\    MSTest project referencing csfox
+samples\          Planned FoxPro programs and synthetic data
+specs\            Feature specifications and runtime direction
+```
+
+`csfox` will contain the interpreter and CLI entry point; a separate engine library can be extracted when there is a concrete need.
+`csfox.tests` is the single test project.
+Project and solution names are lowercase; C# namespaces retain conventional casing (`CsFox` and `CsFox.Tests`).
+Samples are ordinary program and data files, not another .NET project.
+Documentation lives in this README and `specs`; there is no separate `docs` directory yet.
+
+## Build and test
+
+Install the .NET 10 SDK and run these commands from the repository root:
+
+```text
+dotnet build
+dotnet test
+```
+
+`global.json` selects the .NET 10 SDK family and allows stable feature-band updates within that family.
+The console entry point is empty, and the test project has no tests yet.
 
 ## Development tooling
 

@@ -12,9 +12,13 @@ CsFox is an experimental C# and .NET interpreter for DOS FoxPro source programs 
 The execution goal is Windows, macOS, and Linux, without an original FoxPro installation.
 Implement a useful subset through small examples rather than attempt complete compatibility immediately.
 
-The repository is currently at the setup stage, with no .NET solution, application projects, or tests yet.
-Do not invent project names, SDK versions, or working build, run, and test commands.
-When those capabilities are introduced, document the actual prerequisites and commands in the README or linked project documentation.
+`csfox.slnx` contains `src/csfox`, a .NET 10 console application, and `tests/csfox.tests`, the single MSTest project.
+Keep solution/project filenames and project directories lowercase; retain conventional C# namespace, type, and source-file casing.
+The root namespaces are `CsFox` and `CsFox.Tests`.
+Keep engine and host code in `csfox` until a concrete need justifies a separate library.
+Run `dotnet build` and `dotnet test` from the repository root; `global.json` selects the .NET 10 SDK family.
+The console entry point is empty, the test project has no tests yet, and `samples` holds only documentation for the planned samples.
+Keep the README's project layout, prerequisites, and commands current as functionality is added.
 Keep local development usable without requiring a particular IDE.
 
 Spec Kit skills live under `.github/skills/`; shared templates and PowerShell scripts live under `.specify/`.
